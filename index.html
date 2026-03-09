@@ -4,162 +4,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial Google Drive | Penyimpanan Bukti Dukung</title>
+    <title>Tutorial Google Drive Slides | Penyimpanan Bukti Dukung</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Google Drive Tutorial</h1>
-            <p class="subtitle">Panduan lengkap menggunakan Google Drive sebagai media penyimpanan bukti dukung
-                administrasi yang efektif dan terorganisir.</p>
-        </header>
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
 
-        <section id="pengenalan">
-            <p>
-                Google Drive adalah platform penyimpanan awan (cloud storage) yang sangat efektif untuk mengelola
-                dokumen bukti dukung seperti
-                <strong>Surat Kedinasan, SPJK, SPP, laporan kegiatan</strong>, dan dokumen penting lainnya.
-                Dengan fitur kolaborasi dan berbagi link, dokumen Anda akan lebih mudah diakses dan dilaporkan.
-            </p>
-        </section>
-
-        <section id="membuat-akun">
-            <h2>1. Memulai Google Drive</h2>
-            <ol>
-                <li>Kunjungi <b><a href="https://drive.google.com" target="_blank"
-                            style="text-decoration: none; color: var(--primary);">drive.google.com</a></b></li>
-                <li>Login menggunakan akun Google atau akun instansi Anda.</li>
-                <li>Jelajahi dasbor utama untuk melihat ruang penyimpanan Anda.</li>
-            </ol>
+    <div id="slides-container">
+        <!-- Slide 1: Welcome -->
+        <div class="slide active" id="s1">
+            <h1><i class="fab fa-google-drive"></i> G-Drive Tutorial</h1>
+            <p>Panduan Modern: Menggunakan Google Drive sebagai Penyimpanan Bukti Dukung Administrasi.</p>
             <div class="box">
-                <i class="fas fa-lightbulb"></i> Tips Pro: Gunakan akun resmi instansi agar dokumen tetap aman dan
-                terorganisir dalam satu domain.
+                <i class="fas fa-info-circle"></i>
+                <span>Gunakan tombol di bawah atau tombol panah keyboard untuk menavigasi materi.</span>
             </div>
-        </section>
+            <div style="text-align: center; margin-top: 40px;">
+                <i class="fas fa-chevron-down"
+                    style="font-size: 2rem; color: var(--primary); animation: bounce 2s infinite;"></i>
+            </div>
+        </div>
 
-        <section id="membuat-folder">
-            <h2>2. Arsitektur Folder</h2>
-            <p>Memasukkan file tanpa struktur akan menyulitkan pencarian di masa depan. Gunakan tombol <b>+ Baru</b>
-                untuk mulai merapikan dokumen.</p>
-            <ol>
-                <li>Klik tombol <b>+ Baru (New)</b> di pojok kiri atas.</li>
-                <li>Pilih <b>Folder baru</b>.</li>
-                <li>Gunakan penamaan yang konsisten (misal: <code>Administrasi 2026</code>).</li>
-            </ol>
-            <p>Struktur folder yang direkomendasikan:</p>
+        <!-- Slide 2: Login -->
+        <div class="slide" id="s2">
+            <h2><i class="fas fa-sign-in-alt"></i> 1. Memulai</h2>
+            <div class="list-item"><i class="fas fa-check-circle"></i> Buka <b>drive.google.com</b></div>
+            <div class="list-item"><i class="fas fa-user-shield"></i> Login dengan akun resmi instansi.</div>
+            <div class="list-item"><i class="fas fa-shield-alt"></i> Keamanan data adalah prioritas utama.</div>
+            <div class="box">
+                <i class="fas fa-lightbulb"></i>
+                <span>Akun instansi biasanya memiliki kuota penyimpanan yang lebih besar.</span>
+            </div>
+        </div>
+
+        <!-- Slide 3: Folder Architecture -->
+        <div class="slide" id="s3">
+            <h2><i class="fas fa-folder-tree"></i> 2. Arsitektur Folder</h2>
+            <div class="list-item"><i class="fas fa-folder-plus"></i> Klik <b>+ Baru</b> > <b>Folder baru</b></div>
+            <div class="list-item"><i class="fas fa-i-cursor"></i> Beri nama: <code>Administrasi 2026</code></div>
             <pre>
 Administrasi 2026
  ├── Surat Kedinasan
  │     ├── Januari
  │     └── Februari
  ├── SPJK
- │     ├── SPJK-01
- │     └── SPJK-02
+ │     └── SPJK-01
  └── SPP
-       ├── SPP-Gaji
        └── SPP-Kegiatan</pre>
-        </section>
+        </div>
 
-        <section id="upload-file">
-            <h2>3. Manajemen File Dokumen</h2>
-            <p>Setelah folder siap, Anda bisa mengupload dokumen bukti dukung dalam format PDF atau gambar.</p>
-            <ul>
-                <li><code>Surat-Kedinasan.pdf</code></li>
-                <li><code>SPJK-Kegiatan-Maret.pdf</code></li>
-                <li><code>SPP-Belanja-Alat.pdf</code></li>
-            </ul>
-            <p><b>Cara Upload:</b> Cukup klik <b>+ Baru</b> > <b>Upload file</b>, atau seret langsung (drag & drop) file
-                dari komputer Anda ke dalam jendela browser.</p>
-        </section>
+        <!-- Slide 4: Upload File -->
+        <div class="slide" id="s4">
+            <h2><i class="fas fa-cloud-upload-alt"></i> 3. Upload File</h2>
+            <div class="list-item"><i class="fas fa-file-pdf"></i> Upload dokumen dalam format PDF.</div>
+            <div class="list-item"><i class="fas fa-mouse-pointer"></i> Drag & drop file langsung ke folder.</div>
+            <div class="box">
+                <i class="fas fa-file-invoice"></i>
+                <span>Pastikan nama file deskriptif (contoh: SPJK-Mei.pdf).</span>
+            </div>
+        </div>
 
-        <section id="bagi-link">
-            <h2>4. Berbagi & Hak Akses</h2>
-            <p>Ini adalah bagian krusial agar link Anda bisa dibuka oleh verifikator laporan.</p>
-            <ol>
-                <li>Klik kanan pada file atau folder yang ingin dibagikan.</li>
-                <li>Pilih menu <b>Bagikan (Share)</b>.</li>
-                <li>Ubah akses umum menjadi <b>"Siapa saja yang memiliki link"</b>.</li>
-                <li>Pilih peran:
-                    <ul>
-                        <li><b>Viewer:</b> Hanya bisa melihat (Direkomendasikan).</li>
-                        <li><b>Commenter:</b> Bisa memberi catatan.</li>
-                        <li><b>Editor:</b> Bisa mengedit/menghapus.</li>
-                    </ul>
-                </li>
-                <li>Klik <b>Salin link</b> dan tempelkan ke laporan Anda.</li>
-            </ol>
-        </section>
+        <!-- Slide 5: Share Link -->
+        <div class="slide" id="s5">
+            <h2><i class="fas fa-link"></i> 4. Bagikan Link</h2>
+            <div class="list-item"><i class="fas fa-share-alt"></i> Klik kanan > <b>Bagikan (Share)</b></div>
+            <div class="list-item"><i class="fas fa-users"></i> Ubah ke <b>"Siapa saja dengan link"</b></div>
+            <div class="list-item"><i class="fas fa-eye"></i> Pilih peran: <b>Viewer (Pelihat)</b></div>
+            <div class="box">
+                <i class="fas fa-copy"></i>
+                <span>Klik "Salin link" untuk digunakan pada laporan.</span>
+            </div>
+        </div>
 
-        <section id="shortcuts">
-            <h2>5. Efisiensi Kerja (Shortcuts)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Shortcut</th>
-                        <th>Fungsi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="shortcut">Alt</span> + <span class="shortcut">C</span>, kemudian <span
-                                class="shortcut">F</span></td>
-                        <td>Membuat Folder Baru</td>
-                    </tr>
-                    <tr>
-                        <td><span class="shortcut">Alt</span> + <span class="shortcut">C</span>, kemudian <span
-                                class="shortcut">U</span></td>
-                        <td>Upload File</td>
-                    </tr>
-                    <tr>
-                        <td><span class="shortcut">Alt</span> + <span class="shortcut">C</span>, kemudian <span
-                                class="shortcut">I</span></td>
-                        <td>Upload Folder</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <!-- Slide 6: Shortcuts -->
+        <div class="slide" id="s6">
+            <h2><i class="fas fa-keyboard"></i> 5. Shortcuts</h2>
+            <div class="shortcut-grid">
+                <div class="shortcut-card">
+                    <div class="shortcut-keys"><span class="k">Alt</span> + <span class="k">C</span> , <span
+                            class="k">F</span></div>
+                    <span>Membuat Folder Baru</span>
+                </div>
+                <div class="shortcut-card">
+                    <div class="shortcut-keys"><span class="k">Alt</span> + <span class="k">C</span> , <span
+                            class="k">U</span></div>
+                    <span>Upload File</span>
+                </div>
+                <div class="shortcut-card">
+                    <div class="shortcut-keys"><span class="k">Alt</span> + <span class="k">C</span> , <span
+                            class="k">I</span></div>
+                    <span>Upload Folder</span>
+                </div>
+            </div>
+        </div>
 
-        <section id="automation">
-            <h2>6. Otomasi dengan Google Apps Script</h2>
-            <p>Gunakan script ini untuk membuat folder secara massal atau otomatis dengan hak akses yang sudah
-                tersetting.</p>
-            <h3>Fungsi Dasar Buat Folder:</h3>
+        <!-- Slide 7: Automation -->
+        <div class="slide" id="s7">
+            <h2><i class="fas fa-bolt"></i> 6. Otomasi API</h2>
+            <p>Gunakan Google Apps Script untuk otomatisasi.</p>
             <pre>
 function buatFolder() {
-  var namaFolder = "Bukti Dukung 2026";
-  var folder = DriveApp.createFolder(namaFolder);
-  
+  var folder = DriveApp.createFolder("Bukti-2026");
   folder.setSharing(
-      DriveApp.Access.ANYONE_WITH_LINK,
-      DriveApp.Permission.VIEW
+    DriveApp.Access.ANYONE_WITH_LINK,
+    DriveApp.Permission.VIEW
   );
-
-  Logger.log("Link Folder: " + folder.getUrl());
+  Logger.log(folder.getUrl());
 }</pre>
+        </div>
 
-            <h3>Fungsi Custom (User Input):</h3>
-            <pre>
-function buatFolderCustom() {
-  var nama = Browser.inputBox("Masukkan nama folder:");
-  if (nama == "cancel") return;
-
-  var folder = DriveApp.createFolder(nama);
-  folder.setSharing(
-      DriveApp.Access.ANYONE_WITH_LINK,
-      DriveApp.Permission.VIEW
-  );
-
-  Browser.msgBox("Sukses! Link: " + folder.getUrl());
-}</pre>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Tutorial Google Drive IO - Created for Efficiency</p>
-        </footer>
+        <!-- Slide 8: Summary -->
+        <div class="slide" id="s8">
+            <h2><i class="fas fa-flag-checkered"></i> Selesai!</h2>
+            <p>Kini Google Drive Anda siap menjadi gudang dokumen bukti dukung yang profesional.</p>
+            <div class="box">
+                <i class="fas fa-star"></i>
+                <span>Tutorial Selesai - Hubungi admin jika ada pertanyaan.</span>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="location.reload()"><i class="fas fa-redo"></i> Ulangi Tutorial</button>
+            </div>
+        </div>
     </div>
+
+    <div class="controls">
+        <button class="btn" id="prevBtn" disabled onclick="prevSlide()"><i class="fas fa-arrow-left"></i> Prev</button>
+        <button class="btn" id="nextBtn" onclick="nextSlide()">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index < currentSlide) {
+                    slide.classList.add('prev');
+                }
+            });
+
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Initial update
+        updateSlides();
+    </script>
+    <style>
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
 </body>
 
 </html>
