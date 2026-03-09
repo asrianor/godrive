@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Google Drive | Penyimpanan Bukti Dukung</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Google Drive Tutorial</h1>
+            <p class="subtitle">Panduan lengkap menggunakan Google Drive sebagai media penyimpanan bukti dukung administrasi yang efektif dan terorganisir.</p>
+        </header>
+
+        <section id="pengenalan">
+            <p>
+                Google Drive adalah platform penyimpanan awan (cloud storage) yang sangat efektif untuk mengelola dokumen bukti dukung seperti 
+                <strong>Surat Kedinasan, SPJK, SPP, laporan kegiatan</strong>, dan dokumen penting lainnya. 
+                Dengan fitur kolaborasi dan berbagi link, dokumen Anda akan lebih mudah diakses dan dilaporkan.
+            </p>
+        </section>
+
+        <section id="membuat-akun">
+            <h2>1. Memulai Google Drive</h2>
+            <ol>
+                <li>Kunjungi <b><a href="https://drive.google.com" target="_blank" style="text-decoration: none; color: var(--primary);">drive.google.com</a></b></li>
+                <li>Login menggunakan akun Google atau akun instansi Anda.</li>
+                <li>Jelajahi dasbor utama untuk melihat ruang penyimpanan Anda.</li>
+            </ol>
+            <div class="box">
+                <i class="fas fa-lightbulb"></i> Tips Pro: Gunakan akun resmi instansi agar dokumen tetap aman dan terorganisir dalam satu domain.
+            </div>
+        </section>
+
+        <section id="membuat-folder">
+            <h2>2. Arsitektur Folder</h2>
+            <p>Memasukkan file tanpa struktur akan menyulitkan pencarian di masa depan. Gunakan tombol <b>+ Baru</b> untuk mulai merapikan dokumen.</p>
+            <ol>
+                <li>Klik tombol <b>+ Baru (New)</b> di pojok kiri atas.</li>
+                <li>Pilih <b>Folder baru</b>.</li>
+                <li>Gunakan penamaan yang konsisten (misal: <code>Administrasi 2026</code>).</li>
+            </ol>
+            <p>Struktur folder yang direkomendasikan:</p>
+            <pre>
+Administrasi 2026
+ ├── Surat Kedinasan
+ │     ├── Januari
+ │     └── Februari
+ ├── SPJK
+ │     ├── SPJK-01
+ │     └── SPJK-02
+ └── SPP
+       ├── SPP-Gaji
+       └── SPP-Kegiatan</pre>
+        </section>
+
+        <section id="upload-file">
+            <h2>3. Manajemen File Dokumen</h2>
+            <p>Setelah folder siap, Anda bisa mengupload dokumen bukti dukung dalam format PDF atau gambar.</p>
+            <ul>
+                <li><code>Surat-Kedinasan.pdf</code></li>
+                <li><code>SPJK-Kegiatan-Maret.pdf</code></li>
+                <li><code>SPP-Belanja-Alat.pdf</code></li>
+            </ul>
+            <p><b>Cara Upload:</b> Cukup klik <b>+ Baru</b> > <b>Upload file</b>, atau seret langsung (drag & drop) file dari komputer Anda ke dalam jendela browser.</p>
+        </section>
+
+        <section id="bagi-link">
+            <h2>4. Berbagi & Hak Akses</h2>
+            <p>Ini adalah bagian krusial agar link Anda bisa dibuka oleh verifikator laporan.</p>
+            <ol>
+                <li>Klik kanan pada file atau folder yang ingin dibagikan.</li>
+                <li>Pilih menu <b>Bagikan (Share)</b>.</li>
+                <li>Ubah akses umum menjadi <b>"Siapa saja yang memiliki link"</b>.</li>
+                <li>Pilih peran: 
+                    <ul>
+                        <li><b>Viewer:</b> Hanya bisa melihat (Direkomendasikan).</li>
+                        <li><b>Commenter:</b> Bisa memberi catatan.</li>
+                        <li><b>Editor:</b> Bisa mengedit/menghapus.</li>
+                    </ul>
+                </li>
+                <li>Klik <b>Salin link</b> dan tempelkan ke laporan Anda.</li>
+            </ol>
+        </section>
+
+        <section id="shortcuts">
+            <h2>5. Efisiensi Kerja (Shortcuts)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="shortcut">Alt</span> + <span class="shortcut">C</span> + <span class="shortcut">U</span></td>
+                        <td>Upload File Cepat</td>
+                    </tr>
+                    <tr>
+                        <td><span class="shortcut">Alt</span> + <span class="shortcut">C</span> + <span class="shortcut">I</span></td>
+                        <td>Membuat Folder Baru</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="automation">
+            <h2>6. Otomasi dengan Google Apps Script</h2>
+            <p>Gunakan script ini untuk membuat folder secara massal atau otomatis dengan hak akses yang sudah tersetting.</p>
+            <h3>Fungsi Dasar Buat Folder:</h3>
+<pre>
+function buatFolder() {
+  var namaFolder = "Bukti Dukung 2026";
+  var folder = DriveApp.createFolder(namaFolder);
+  
+  folder.setSharing(
+      DriveApp.Access.ANYONE_WITH_LINK,
+      DriveApp.Permission.VIEW
+  );
+
+  Logger.log("Link Folder: " + folder.getUrl());
+}</pre>
+
+            <h3>Fungsi Custom (User Input):</h3>
+<pre>
+function buatFolderCustom() {
+  var nama = Browser.inputBox("Masukkan nama folder:");
+  if (nama == "cancel") return;
+
+  var folder = DriveApp.createFolder(nama);
+  folder.setSharing(
+      DriveApp.Access.ANYONE_WITH_LINK,
+      DriveApp.Permission.VIEW
+  );
+
+  Browser.msgBox("Sukses! Link: " + folder.getUrl());
+}</pre>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Tutorial Google Drive IO - Created for Efficiency</p>
+        </footer>
+    </div>
+</body>
+</html>
