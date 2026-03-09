@@ -159,10 +159,10 @@ Administrasi 2026
             </div>
         </div>
 
-        <!-- Slide 9: Automation -->
+        <!-- Slide 9: Automation 1 -->
         <div class="slide" id="s9">
-            <h2><i class="fas fa-bolt"></i> 8. Otomasi API</h2>
-            <p>Gunakan Google Apps Script untuk otomatisasi.</p>
+            <h2><i class="fas fa-bolt"></i> 8. Otomasi 1 (Nama Statis)</h2>
+            <p>Gunakan Google Apps Script untuk membuat folder dengan nama tetap secara otomatis.</p>
             <pre>
 function buatFolder() {
   var folder = DriveApp.createFolder("Bukti-2026");
@@ -174,8 +174,27 @@ function buatFolder() {
 }</pre>
         </div>
 
-        <!-- Slide 10: Summary -->
+        <!-- Slide 10: Automation 2 -->
         <div class="slide" id="s10">
+            <h2><i class="fas fa-terminal"></i> 9. Otomasi 2 (Nama Kustom)</h2>
+            <p>User dapat memasukkan nama folder sendiri melalui kotak dialog.</p>
+            <pre>
+function buatFolderCustom() {
+  var nama = Browser.inputBox("Masukkan nama folder:");
+  if (nama == "cancel") return;
+
+  var folder = DriveApp.createFolder(nama);
+  folder.setSharing(
+      DriveApp.Access.ANYONE_WITH_LINK,
+      DriveApp.Permission.VIEW
+  );
+
+  Browser.msgBox("Link: " + folder.getUrl());
+}</pre>
+        </div>
+
+        <!-- Slide 11: Summary -->
+        <div class="slide" id="s11">
             <h2><i class="fas fa-flag-checkered"></i> Selesai!</h2>
             <p>Kini Google Drive Anda siap menjadi gudang dokumen bukti dukung yang profesional.</p>
             <div class="box">
